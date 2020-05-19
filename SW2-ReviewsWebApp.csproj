@@ -135,6 +135,10 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="library\Bootstrap\bootstrap.min.css" />
+    <Content Include="library\Bootstrap\bootstrap.min.js" />
+    <Content Include="library\Bootstrap\popper.min.js" />
+    <Content Include="library\Jquery\jquery-3.4.1.slim.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
