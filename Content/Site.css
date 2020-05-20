@@ -1,24 +1,107 @@
-﻿body {
-    padding-top: 50px;
-    padding-bottom: 20px;
+﻿
+body {
+    margin: 0;
+    padding: 0;
 }
 
-/* Set padding to keep content from hitting the edges */
-.body-content {
-    padding-left: 15px;
-    padding-right: 15px;
+.main-cl {
+    color: #264653 !important;
 }
 
-/* Override the default bootstrap behavior where horizontal description lists 
-   will truncate terms that are too long to fit in the left column 
-*/
-.dl-horizontal dt {
-    white-space: normal;
+.sec-cl {
+    color: #2a9d8f !important;
 }
 
-/* Set width on the form input elements since they're 100% wide by default */
-input,
-select,
-textarea {
-    max-width: 280px;
+.thr-cl {
+    color: #e9c46a !important;
+}
+
+.fourth-cl {
+    color: #f4a261 !important;
+}
+
+.fifth-cl {
+    color: #e76f51 !important;
+}
+
+.main-bg {
+    background-color: #264653 !important;
+}
+
+.sec-bg {
+    background-color: #2a9d8f !important;
+}
+
+.thr-bg {
+    background-color: #e9c46a !important;
+}
+
+.fourth-bg {
+    background-color: #f4a261 !important;
+}
+
+.fifth-bg {
+    background-color: #e76f51 !important;
+}
+
+.wh-bg {
+    background-color: rgb(231, 231, 231);
+}
+
+.main-btn {
+    color: #2a9d8f !important;
+    border: #2a9d8f 2px solid !important;
+    border-radius: 10px !important;
+    transition: all .3s;
+}
+
+    .main-btn:hover {
+        color: #fff !important;
+        border: #fff 2px solid !important;
+        border-radius: 10px !important;
+        transform: scale(1.1, 1.1);
+    }
+
+.sec-btn {
+    color: #f4a261 !important;
+    border: #f4a261 2px solid !important;
+    border-radius: 10px !important;
+    transition: all .3s;
+}
+
+    .sec-btn:hover {
+        color: #fff !important;
+        border: #fff 2px solid !important;
+        border-radius: 10px !important;
+        transform: scale(1.1, 1.1);
+    }
+
+.name {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.home-cover {
+    padding: 0;
+    background: no-repeat url('../images/temp2.jpeg');
+    background-size: cover;
+    background-position: center center;
+}
+
+.home-cover-layer {
+    padding: 0;
+    padding: 15% 0;
+    background-color: rgba(0, 0, 0, .7) !important;
+}
+
+.contact-cover {
+    padding: 0;
+    background: no-repeat url('../images/temp4.jpg');
+    background-size: cover;
+    background-position: center center;
+}
+
+.contact-cover-layer {
+    padding: 0;
+    padding: 15% 0;
+    background-color: rgba(0, 0, 0, .7) !important;
 }
