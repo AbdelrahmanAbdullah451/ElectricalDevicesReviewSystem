@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
 
-namespace SW2_ReviewsWebApp
+namespace ReviewArena
 {
     public class RouteConfig
     {

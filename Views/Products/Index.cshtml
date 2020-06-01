@@ -1,34 +1,90 @@
-﻿
+﻿@model IEnumerable<ReviewArena.Models.Product>
+
 @{
-    ViewBag.Title = "Products";
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+@*<h2>Index</h2>
 
-<section class="container py-5">
-    <h4 class="sec-cl">Category : <span class="main-cl font-italic">phones</span></h4>
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>*@
+@*<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Category.CategoryName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.price)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ProductImage)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ProductDescription)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Category.CategoryName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.price)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProductImage)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProductDescription)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.ProductID }) |
+                @Html.ActionLink("Details", "Details", new { id = item.ProductID }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.ProductID })
+            </td>
+        </tr>
+    }
+
+</table>*@
+
+<section class="container py-5 my-5 bg-light">
+    
     <div class="row">
+        @foreach (var item in Model)
+        {
 
 
-
-        <div class="product-card col-md-4 my-5">
-            <div class="card" style="width: 18rem;">
-                <img src="~/images/temp.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">iPhone</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <a href="@Url.Action("index","Reviews")" class="btn sec-btn">View Reviews</a>
-                    <a href="@Url.Action("AddReview","Reviews")" class="btn main-btn">Add Review</a>
+            <div class="product-card col-md-4 my-5 py-4" >
+                <div class="card" style="width: 18rem;">
+                    <img src="@Url.Content(item.ProductImage)" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">  @Html.DisplayFor(modelItem => item.name)</h5>
+                        <span class="main-cl font-italic"> @Html.DisplayFor(modelItem => item.Category.CategoryName)</span>
+                        <p class="card-text">
+                            @Html.DisplayFor(modelItem => item.ProductDescription)
+                        </p>
+                        <a href="#" class="btn sec-btn">View Reviews</a>
+                        <a href="#" class="btn main-btn">Add Review</a>
+                    </div>
                 </div>
             </div>
+
+
+        }
+
+
+
         </div>
-
-
-        
-
-
-
-
-
-    </div>
 
 </section>

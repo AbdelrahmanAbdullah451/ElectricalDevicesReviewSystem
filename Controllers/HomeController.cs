@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace SW2_ReviewsWebApp.Controllers
+namespace ReviewArena.Controllers
 {
     public class HomeController : Controller
     {

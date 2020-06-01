@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("SW2_ReviewsWebApp")]
+[assembly: AssemblyTitle("ReviewArena")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("SW2_ReviewsWebApp")]
+[assembly: AssemblyProduct("ReviewArena")]
 [assembly: AssemblyCopyright("Copyright ©  2020")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("8f55fde4-92cb-4f77-b314-c2f741f0b339")]
+[assembly: Guid("c624405d-6c91-4bef-959d-f3ab1957b00c")]
 
 // Version information for an assembly consists of the following four values:
 //

@@ -1,7 +1,7 @@
 ﻿@{
     ViewBag.Title = "Home Page";
 }
-<section class="container-fluid home-cover">
+@*<section class="container-fluid home-cover">
     <div class="row fifth-bg justify-content-center text-center home-cover-layer">
         <div class="col-md-3"></div>
         <div class="col-md-6 pb-5">
@@ -14,7 +14,7 @@
 
         </div>
     </div>
-</section>
+</section>*@
 
 <section class="container bg-light my-5 px-0">
     <div class="row align-items-top">
@@ -22,20 +22,21 @@
             <img class="img-fluid" src="~/images/temp3.jpeg">
         </div>
         <div class="col-md-6 pr-4">
-            <h2 class="my-5" style="border-bottom :#e76f51 2px solid ;font-family: 'Open Sans', sans-serif;">Earn Real Money Now !</h2>
+            <h2 class="my-5" style="border-bottom :#28a745 2px solid ;font-family: 'Open Sans', sans-serif;">Earn Real Money Now !</h2>
             <h4 style="font-family: 'Roboto', sans-serif;">
                 You can earn real money by collecting coins from reviewing our
                 products.
             </h4>
+            <a href="@Url.Action("Index" , "Products")" class="btn mx-2 mt-5 my-sm-0 btn-outline-success mb-0" type="submit">Check Products</a>
         </div>
         </h4>
 </section>
 
-<section class="container-fluid contact-cover">
+<section style="" class="container-fluid contact-cover">
     <div class="row fifth-bg justify-content-center  contact-cover-layer">
         <div class="col-md-5">
             <form>
-                <h2 class="thr-cl">Contact Us</h2>
+                <h2 class="thr-cl" style="font-family: 'Open Sans', sans-serif;">Stay in touch</h2>
                 <div class="form-group">
                     <label class="fifth-cl" for="exampleInputEmail1">E-Mail</label>
                     <input type="email" class="form-control">

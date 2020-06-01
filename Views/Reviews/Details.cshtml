@@ -1,0 +1,91 @@
+﻿@model ReviewArena.Models.Review
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Review</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Category.CategoryName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Category.CategoryName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Product.name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Product.name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ReviewTitle)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ReviewTitle)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Pros)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Pros)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Cons)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cons)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ReviewImage)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ReviewImage)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ReviewDescription)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ReviewDescription)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AddedAt)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AddedAt)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UserId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UserId)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

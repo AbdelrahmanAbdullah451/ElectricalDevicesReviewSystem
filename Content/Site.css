@@ -1,4 +1,27 @@
-﻿
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
 body {
     margin: 0;
     padding: 0;
@@ -82,7 +105,7 @@ body {
 
 .home-cover {
     padding: 0;
-    background: no-repeat url('../images/temp2.jpeg');
+    background: no-repeat url('~/images/temp2.jpeg');
     background-size: cover;
     background-position: center center;
 }
@@ -95,7 +118,7 @@ body {
 
 .contact-cover {
     padding: 0;
-    background: no-repeat url('../images/temp4.jpg');
+    background: no-repeat url('https://www.google.com/imgres?imgurl=https%3A%2F%2Fmedia.istockphoto.com%2Fphotos%2Fblue-abstract-background-or-texture-picture-id1138395421%3Fk%3D6%26m%3D1138395421%26s%3D612x612%26w%3D0%26h%3DbJ1SRWujCgg3QWzkGPgaRiArNYohPl7-Wc4p_Fa_cyA%3D&imgrefurl=https%3A%2F%2Fwww.istockphoto.com%2Fphotos%2Fbackgrounds&tbnid=k3hnY5tH5YyL0M&vet=12ahUKEwiW0rq0kODpAhUJ44UKHc-WAoQQMygMegUIARCwAg..i&docid=mM5dTYYyzCWOlM&w=612&h=408&q=background%20images&safe=strict&ved=2ahUKEwiW0rq0kODpAhUJ44UKHc-WAoQQMygMegUIARCwAg');
     background-size: cover;
     background-position: center center;
 }
@@ -104,4 +127,11 @@ body {
     padding: 0;
     padding: 15% 0;
     background-color: rgba(0, 0, 0, .7) !important;
+}
+.text-area {
+    width: 50% !important;
+    height: 100px !important;
+    color: #3A3A3A !important;
+    font-weight: bold !important;
+    font-style: italic !important;
 }
