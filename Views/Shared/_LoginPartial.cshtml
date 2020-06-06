@@ -7,9 +7,19 @@
 
         <ul class="nav navbar-nav navbar-right">
             <li>
-                @Html.ActionLink("Hello " + User.Identity.GetUserName() + "!", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" })
+                @*@Html.ActionLink("Hello " + User.Identity.GetUserName() + "!", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" })*@
+                @Html.ActionLink(User.Identity.GetUserName(), "Details", new { id = User.Identity.GetUserId() }, htmlAttributes: new { @class = "btn-success p-2 mx-3 rounded" })
+
+
+
+                @* User.Identity.GetUserId()  suppose to get reviewer ID *@
+                @*  User.Identity.GetUserName()  suppose to get reviewer name *@
+
+
+
+
             </li>
-            <li><a href="javascript:document.getElementById('logoutForm').submit()">Log off</a></li>
+            <li><a href="javascript:document.getElementById('logoutForm').submit()" class="">Log off</a></li>
         </ul>
     }
 }
