@@ -7,7 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using ReviewArena.Models;
-
+using System.IO;
 namespace ReviewArena.Controllers
 {
     public class ReviewsController : Controller
@@ -49,10 +49,22 @@ namespace ReviewArena.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,ReviewTitle,Pros,Cons,ReviewImage,ReviewDescription,AddedAt,CategoryId,ProductId,UserId")] Review review)
+        public ActionResult Create([Bind(Include = "Id,ReviewTitle,Pros,Cons,ReviewDescription,AddedAt,CategoryId,ProductId,UserId")] Review review, HttpPostedFileBase imgFile)
+       
+
         {
+            
+            
             if (ModelState.IsValid)
             {
+                string path = "";
+                if (imgFile.FileName.Length > 0)
+                {
+                    path = "~/images/" + Path.GetFileName(imgFile.FileName);
+                    imgFile.SaveAs(Server.MapPath(path));
+
+                }
+                review.ReviewImage = path;
                 db.Reviews.Add(review);
                 db.SaveChanges();
                 return RedirectToAction("Index");
