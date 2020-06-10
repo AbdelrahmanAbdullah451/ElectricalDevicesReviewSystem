@@ -42,9 +42,13 @@ namespace ReviewArena.Models
         [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
         public  System.DateTime AddedAt { get; set; }
 
+        [Display(Name ="Likes")]
+        public int LikesNumber { get; set; }
+
 
         [ForeignKey("Product")]
         public int ProductId { get; set; }
+
 
 
         public virtual Product Product { get; set; }

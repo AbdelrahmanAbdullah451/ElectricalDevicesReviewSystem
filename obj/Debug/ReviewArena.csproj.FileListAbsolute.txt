@@ -113,3 +113,4 @@ C:\Users\man20\source\repos\ReviewArena\obj\Debug\ReviewArena.Migrations.RemoveR
 C:\Users\man20\source\repos\ReviewArena\obj\Debug\ReviewArena.Migrations.time.resources
 C:\Users\man20\source\repos\ReviewArena\obj\Debug\ReviewArena.Migrations.time2.resources
 C:\Users\man20\source\repos\ReviewArena\obj\Debug\ReviewArena.Migrations.addAdmin.resources
+C:\Users\man20\source\repos\ReviewArena\obj\Debug\ReviewArena.Migrations.AddLikeModel.resources

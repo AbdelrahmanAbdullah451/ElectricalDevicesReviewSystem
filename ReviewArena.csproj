@@ -170,6 +170,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\CategoriesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LikesController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\ProductsController.cs" />
     <Compile Include="Controllers\ReviewsController.cs" />
@@ -201,10 +202,15 @@
     <Compile Include="Migrations\202006101357080_addAdmin.Designer.cs">
       <DependentUpon>202006101357080_addAdmin.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202006101738176_AddLikeModel.cs" />
+    <Compile Include="Migrations\202006101738176_AddLikeModel.Designer.cs">
+      <DependentUpon>202006101738176_AddLikeModel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Category.cs" />
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\Like.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Product.cs" />
     <Compile Include="Models\Review.cs" />
@@ -291,6 +297,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Likes\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -323,6 +330,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202006101357080_addAdmin.resx">
       <DependentUpon>202006101357080_addAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202006101738176_AddLikeModel.resx">
+      <DependentUpon>202006101738176_AddLikeModel.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

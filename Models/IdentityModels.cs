@@ -1,4 +1,5 @@
-﻿using System.Data.Entity;
+﻿using System.ComponentModel.DataAnnotations.Schema;
+using System.Data.Entity;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
@@ -19,6 +20,7 @@ namespace ReviewArena.Models
         public string FirstName { get; set; }
         public string LastName { get; set; }
 
+
     }
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
@@ -38,5 +40,7 @@ namespace ReviewArena.Models
         public System.Data.Entity.DbSet<ReviewArena.Models.Product> Products { get; set; }
 
         public System.Data.Entity.DbSet<ReviewArena.Models.Review> Reviews { get; set; }
+
+        public System.Data.Entity.DbSet<ReviewArena.Models.Like> Likes { get; set; }
     }
 }
