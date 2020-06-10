@@ -7,14 +7,16 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using ReviewArena.Models;
-using System.IO;
+
 namespace ReviewArena.Controllers
 {
+    [Authorize]
     public class ReviewsController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: Reviews
+        [AllowAnonymous]
         public ActionResult Index()
         {
             var reviews = db.Reviews.Include(r => r.Category).Include(r => r.Product);
@@ -22,6 +24,7 @@ namespace ReviewArena.Controllers
         }
 
         // GET: Reviews/Details/5
+        [AllowAnonymous]
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -39,7 +42,7 @@ namespace ReviewArena.Controllers
         // GET: Reviews/Create
         public ActionResult Create()
         {
-            ViewBag.CategoryId = new SelectList(db.Categories, "CategoryId", "CategoryName");
+            ViewBag.category_id = new SelectList(db.Categories, "CategoryId", "CategoryName");
             ViewBag.ProductId = new SelectList(db.Products, "ProductID", "name");
             return View();
         }
@@ -49,28 +52,15 @@ namespace ReviewArena.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,ReviewTitle,Pros,Cons,ReviewDescription,AddedAt,CategoryId,ProductId,UserId")] Review review, HttpPostedFileBase imgFile)
-       
-
+        public ActionResult Create([Bind(Include = "Id,ReviewTitle,Pros,Cons,ReviewImage,ReviewDescription,AddedAt,category_id,ProductId")] Review review)
         {
-            
-            
             if (ModelState.IsValid)
             {
-                string path = "";
-                if (imgFile.FileName.Length > 0)
-                {
-                    path = "~/images/" + Path.GetFileName(imgFile.FileName);
-                    imgFile.SaveAs(Server.MapPath(path));
-
-                }
-                review.ReviewImage = path;
                 db.Reviews.Add(review);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            ViewBag.CategoryId = new SelectList(db.Categories, "CategoryId", "CategoryName", review.CategoryId);
             ViewBag.ProductId = new SelectList(db.Products, "ProductID", "name", review.ProductId);
             return View(review);
         }
@@ -87,7 +77,6 @@ namespace ReviewArena.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.CategoryId = new SelectList(db.Categories, "CategoryId", "CategoryName", review.CategoryId);
             ViewBag.ProductId = new SelectList(db.Products, "ProductID", "name", review.ProductId);
             return View(review);
         }
@@ -97,7 +86,7 @@ namespace ReviewArena.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,ReviewTitle,Pros,Cons,ReviewImage,ReviewDescription,AddedAt,CategoryId,ProductId,UserId")] Review review)
+        public ActionResult Edit([Bind(Include = "Id,ReviewTitle,Pros,Cons,ReviewImage,ReviewDescription,category_id,ProductId")] Review review)
         {
             if (ModelState.IsValid)
             {
@@ -105,7 +94,6 @@ namespace ReviewArena.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.CategoryId = new SelectList(db.Categories, "CategoryId", "CategoryName", review.CategoryId);
             ViewBag.ProductId = new SelectList(db.Products, "ProductID", "name", review.ProductId);
             return View(review);
         }

@@ -4,45 +4,32 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - My ASP.NET Application</title>
-    <link href="~/library/Bootstrap/bootstrap.min.css" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital@1&family=Roboto:wght@300&display=swap" rel="stylesheet">
-    @RenderSection("Css", required: false)
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
 </head>
-<body class="wh-bg">
-  
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand text-success" href="@Url.Action("Index","Home")">Review-Arena</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="@Url.Action("Index","Home")">Home <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="@Url.Action("Create","Products")">New Product</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="@Url.Action("Index","Products")">Product</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="@Url.Action("Index","Category")">Category</a>
-                </li>
-
-
-            </ul>
-            <form class="form-inline my-2 my-lg-0">
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                    <li>@Html.ActionLink("About", "About", "Home")</li>
+                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                </ul>
                 @Html.Partial("_LoginPartial")
-                
-            </form>
+            </div>
         </div>
-    </nav>
-
-
-
-    <div class="container my-5 p-5 body-content">
+    </div>
+    <div class="container body-content">
         @RenderBody()
         <hr />
         <footer>
@@ -50,9 +37,8 @@
         </footer>
     </div>
 
-    <script src="~/library/Jquery/jquery-3.4.1.slim.min.js"></script>
-    <script src="~/library/Bootstrap/popper.min.js"></script>
-    <script src="~/library/Bootstrap/bootstrap.min.js"></script>
-    @RenderSection("Scripts", required: false)
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
 </body>
 </html>

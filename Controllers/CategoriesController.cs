@@ -10,6 +10,7 @@ using ReviewArena.Models;
 
 namespace ReviewArena.Controllers
 {
+    [Authorize(Roles ="Admin")]
     public class CategoriesController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();

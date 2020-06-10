@@ -10,6 +10,7 @@ using ReviewArena.Models;
 
 namespace ReviewArena.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class ProductsController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
@@ -20,28 +21,7 @@ namespace ReviewArena.Controllers
             var products = db.Products.Include(p => p.Category);
             return View(products.ToList());
         }
-        // Product filteration
-        public JsonResult GetGategoryName(string term)
-        {
-            List<string> allCategory;
-            allCategory = db.Categories.Where(x => x.CategoryName.ToLower().StartsWith(term.ToLower())).Select(y => y.CategoryName).ToList();
-            return Json(allCategory, JsonRequestBehavior.AllowGet);
-        }
 
-        [HttpPost]
-        public ActionResult Index(string searchTerm)
-        {
-            List<Product> products;
-            if (string.IsNullOrEmpty(searchTerm))
-            {
-                products = db.Products.Include(u => u.Category).ToList();
-            }
-            else
-            {
-                products = db.Products.Include(u => u.Category).Where(a => a.Category.CategoryName.ToLower().StartsWith(searchTerm.ToLower())).ToList();
-            }
-            return View(products);
-        }
         // GET: Products/Details/5
         public ActionResult Details(int? id)
         {

@@ -5,119 +5,54 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-@*<h2>Index</h2>
+<h2>Index</h2>
 
-    <p>
-        @Html.ActionLink("Create New", "Create")
-    </p>*@
-@*<table class="table">
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Category.CategoryName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.name)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.price)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ProductImage)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ProductDescription)
-            </th>
-            <th></th>
-        </tr>
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Category.CategoryName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.price)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ProductImage)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ProductDescription)
+        </th>
+        <th></th>
+    </tr>
 
-        @foreach (var item in Model)
-        {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Category.CategoryName)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.name)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.price)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.ProductImage)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.ProductDescription)
-                </td>
-                <td>
-                    @Html.ActionLink("Edit", "Edit", new { id = item.ProductID }) |
-                    @Html.ActionLink("Details", "Details", new { id = item.ProductID }) |
-                    @Html.ActionLink("Delete", "Delete", new { id = item.ProductID })
-                </td>
-            </tr>
-        }
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Category.CategoryName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.price)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ProductImage)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ProductDescription)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ProductID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ProductID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ProductID })
+        </td>
+    </tr>
+}
 
-    </table>*@
-
-
-
-<script>
-    $(function () {
-        $("#txtsearch").autocomplete({
-            source: function (request, response) {
-                $.ajax({
-                    url: " @Url.Action("GetCategoryName","Products")",
-                    dataType: "json",
-                    data: { term: $("#txtsearch").val() },
-                    success: function (data) {
-                        response($.map(data, function (item) {
-                            return item;
-                        }))
-                    },
-
-                });
-            }
-        });
-    });
-</script>
-
-
-<section class="container py-5 my-5 bg-light">
-    <div class="row my-2 justify-content-center">
-        <div class="col-md-6 my-5">
-            @using (@Html.BeginForm("index", "products", FormMethod.Post, new { @class = "" }))
-            {
-                <div class="input-group" style="width : 100% ">
-                    @Html.TextBox("searchTerm", null, new { @class = "form-controll mx-3", id = "txtsearch" })
-                    <button type="submit" class="search btn btn-outline-success form-control" style="">Filter</button>
-                </div>
-            }
-        </div>
-    </div>
-    <div class="row">
-        @foreach (var item in Model)
-        {
-
-
-            <div class="product-card col-md-4 my-5 py-4">
-                <div class="card" style="width: 18rem;">
-                    <img src="@Url.Content(item.ProductImage)" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">  @Html.DisplayFor(modelItem => item.name)</h5>
-                        <span class="main-cl font-italic"> @Html.DisplayFor(modelItem => item.Category.CategoryName)</span>
-                        <p class="card-text">
-                            @Html.DisplayFor(modelItem => item.ProductDescription)
-                        </p>
-                        <a href="@Url.Action("Details" , "Reviews" , new { id = item.category_id } )" class="btn sec-btn">View Reviews</a>
-                        <a href="@Url.Action("Create" , "Reviews" , null)" class="btn main-btn">Add Review</a>
-                    </div>
-                </div>
-            </div>
-
-
-        }
-
-
-
-    </div>
-
-</section>
+</table>

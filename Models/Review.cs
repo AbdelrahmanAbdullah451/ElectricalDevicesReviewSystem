@@ -39,19 +39,14 @@ namespace ReviewArena.Models
         public string ReviewDescription { get; set; }
 
         [Display(Name = "Added at")]
-        public System.DateTime AddedAt { get; set; }
+        [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
+        public  System.DateTime AddedAt { get; set; }
 
-        [ForeignKey("Category")]
-        public int CategoryId { get; set; }
 
         [ForeignKey("Product")]
         public int ProductId { get; set; }
 
-        public string UserId { get; set; }
 
-        //[ForeignKey("UserId")]
-        public virtual ApplicationUser ApplicationUser { get; set; }
-        public virtual Reviewer Reviewer { get; set; }
         public virtual Product Product { get; set; }
         public virtual Category Category { get; set; }
     }

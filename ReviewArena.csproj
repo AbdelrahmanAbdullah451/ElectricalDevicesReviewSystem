@@ -172,8 +172,8 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\ProductsController.cs" />
-    <Compile Include="Controllers\ReviewersController.cs" />
     <Compile Include="Controllers\ReviewsController.cs" />
+    <Compile Include="Controllers\RolesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -185,6 +185,22 @@
     <Compile Include="Migrations\202005290945246_FirstMigration.Designer.cs">
       <DependentUpon>202005290945246_FirstMigration.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202006081558229_RemoveReviewer.cs" />
+    <Compile Include="Migrations\202006081558229_RemoveReviewer.Designer.cs">
+      <DependentUpon>202006081558229_RemoveReviewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202006090511067_time.cs" />
+    <Compile Include="Migrations\202006090511067_time.Designer.cs">
+      <DependentUpon>202006090511067_time.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202006090544385_time2.cs" />
+    <Compile Include="Migrations\202006090544385_time2.Designer.cs">
+      <DependentUpon>202006090544385_time2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202006101357080_addAdmin.cs" />
+    <Compile Include="Migrations\202006101357080_addAdmin.Designer.cs">
+      <DependentUpon>202006101357080_addAdmin.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Category.cs" />
@@ -192,7 +208,7 @@
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Product.cs" />
     <Compile Include="Models\Review.cs" />
-    <Compile Include="Models\Reviewer.cs" />
+    <Compile Include="Models\RoleViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -205,14 +221,6 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
-    <Content Include="images\temp.jpg" />
-    <Content Include="images\temp2.jpeg" />
-    <Content Include="images\temp3.jpeg" />
-    <Content Include="images\temp4.jpg" />
-    <Content Include="library\Bootstrap\bootstrap.min.css" />
-    <Content Include="library\Bootstrap\bootstrap.min.js" />
-    <Content Include="library\Bootstrap\popper.min.js" />
-    <Content Include="library\Jquery\jquery-3.4.1.slim.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
@@ -265,11 +273,6 @@
     <Content Include="Views\Reviews\Details.cshtml" />
     <Content Include="Views\Reviews\Edit.cshtml" />
     <Content Include="Views\Reviews\Index.cshtml" />
-    <Content Include="Views\Reviewers\Create.cshtml" />
-    <Content Include="Views\Reviewers\Delete.cshtml" />
-    <Content Include="Views\Reviewers\Details.cshtml" />
-    <Content Include="Views\Reviewers\Edit.cshtml" />
-    <Content Include="Views\Reviewers\Index.cshtml" />
     <Content Include="Views\Products\Create.cshtml" />
     <Content Include="Views\Products\Delete.cshtml" />
     <Content Include="Views\Products\Details.cshtml" />
@@ -280,6 +283,11 @@
     <Content Include="Views\Categories\Details.cshtml" />
     <Content Include="Views\Categories\Edit.cshtml" />
     <Content Include="Views\Categories\Index.cshtml" />
+    <Content Include="Views\Roles\Create.cshtml" />
+    <Content Include="Views\Roles\Delete.cshtml" />
+    <Content Include="Views\Roles\Details.cshtml" />
+    <Content Include="Views\Roles\Edit.cshtml" />
+    <Content Include="Views\Roles\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -303,6 +311,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202005290945246_FirstMigration.resx">
       <DependentUpon>202005290945246_FirstMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202006081558229_RemoveReviewer.resx">
+      <DependentUpon>202006081558229_RemoveReviewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202006090511067_time.resx">
+      <DependentUpon>202006090511067_time.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202006090544385_time2.resx">
+      <DependentUpon>202006090544385_time2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202006101357080_addAdmin.resx">
+      <DependentUpon>202006101357080_addAdmin.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
